@@ -1,17 +1,10 @@
 # good_dog.rb
 
 class GoodDog
+  attr_accessor :name
 
   def initialize(name)
     @name = name
-  end
-
-  def name              # This was renamed from "get_name"
-    @name
-  end
-
-  def name=(n)   # This was renamed from "set_name="
-    @name = n
   end
 
   def speak
