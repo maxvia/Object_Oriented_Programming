@@ -1,26 +1,33 @@
 # good_dog.rb
 
-module Speak
-  def speak (sound)
-    puts "#{sound}"
-  end
-end
-
 class GoodDog
-  include Speak
+
+  def initialize(name)
+    @name = name
+  end
+
+  def get_name
+    @name
+  end
+
+  def set_name=(name)
+    @name = name
+  end
+
+  def speak
+    "#{@name} says: Arf!"
+  end
+
 end
 
-class HumanBeing
-  include Speak
-end
+sparky = GoodDog.new('Sparky')
+puts sparky.speak
 
-sparky = GoodDog.new
-sparky.speak("Arf!")
-bob = HumanBeing.new
-bob.speak("Hello!")
-puts ''
-puts "---GoodDog ancestors---"
-puts GoodDog.ancestors
-puts ""
-puts "---HumanBeing ancestors---"
-puts HumanBeing.ancestors
+fido = GoodDog.new("Fido")
+puts fido.speak
+
+puts sparky.get_name
+puts fido.get_name
+
+sparky.set_name = "Spartakus"
+puts sparky.get_name
